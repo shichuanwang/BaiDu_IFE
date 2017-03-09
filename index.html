@@ -3,8 +3,92 @@
 <head>
     <meta charset="utf-8">
     <title>IFE JavaScript Task 01</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    
+    <div id="header-wrapper">
+        <div id="header-title">
+            <h2>2017 百度前端IFE任务汇总</h2>
+        </div>
+    </div>
+    <div id="container-wrapper">
+        <div id="content-left">
+            <ul>
+                <li><a class="taskTarget" href="JavaScript: void(0)" onClick="fileSystemObject(this)">读取文件</a></li>
+                <li><a class="taskTarget" href="task_1/task1.html">任务一</a></li>
+                
+            </ul>
+        </div>
+        <div id="content-modle">
+            
+        </div>
+        <div id="content-right">
+            
+        </div>
+    </div>
+    <script>
+        ( function() {
+            var taskTarget = document.getElementsByClassName("taskTarget");
+            //以下是调用上面的函数
+        if (checkBrowser() == "FF" || checkBrowser() == "Opera" || checkBrowser() == "Safari" || checkBrowser() == "Chrome" ) {
+            // taskTarget[0].addEventListener("onclick" ,function() {
+            //     console.log(2);
+            // })
+        }else if (checkBrowser() == "IE55" || checkBrowser() == "IE6" || checkBrowser() == "IE7" || checkBrowser() == "IE8" || checkBrowser() == "IE9" || checkBrowser() == "IE10" || checkBrowser() == "IE11") {
+            // taskTarget.attachEvent("onclick" ,function() {
+            //     console.log(1);
+            // })
+        }
+        } )()
+
+        // 判断浏览器类型
+        function checkBrowser(){
+            var userAgent = navigator.userAgent; //取得浏览器的userAgent字符串
+            var isOpera = userAgent.indexOf("Opera") > -1; //判断是否Opera浏览器
+            var isIE = userAgent.indexOf("compatible") > -1 && userAgent.indexOf("MSIE") > -1 && !isOpera; //判断是否IE浏览器
+            var isFF = userAgent.indexOf("Firefox") > -1; //判断是否Firefox浏览器
+            var isSafari = userAgent.indexOf("Safari") > -1; //判断是否Safari浏览器
+            var isChrome = userAgent.indexOf("Chrome") > -1; //判断是否Chrome浏览器
+            if (isIE) {
+                var IE5 = IE55 = IE6 = IE7 = IE8 = false;
+                var reIE = new RegExp("MSIE (\\d+\\.\\d+);");
+                reIE.test(userAgent);
+                var fIEVersion = parseFloat(RegExp["$1"]);
+                IE55 = fIEVersion == 5.5;
+                IE6 = fIEVersion == 6.0;
+                IE7 = fIEVersion == 7.0;
+                IE8 = fIEVersion == 8.0;
+                if (IE55) {
+                    return "IE55";
+                }
+                if (IE6) {
+                    return "IE6";
+                }
+                if (IE7) {
+                    return "IE7";
+                }
+                if (IE8) {
+                    return "IE8";
+                }
+            }//isIE end
+            if (isFF) {
+                return "FF";
+            }
+            if (isOpera) {
+                return "Opera";
+            }
+            if (isChrome) {
+                return "Chrome"
+            }
+        }//checkBrowser() end
+        
+
+
+        // 读取文件内容
+        function fileSystemObject() {
+            
+        }
+
+    </script>
 </body>
 </html>
