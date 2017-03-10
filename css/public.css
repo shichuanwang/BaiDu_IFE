@@ -61,7 +61,7 @@ a {
 
 #content-left {
     position: absolute;
-    width: 10%;
+    width: 20%;
 }
 
 #content-modle {
@@ -73,5 +73,5 @@ a {
 #content-right {
     position: absolute;
     left: 70%;
-    width: 30%;
+    width: 20%;
 }
