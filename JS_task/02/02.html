@@ -8,36 +8,43 @@
 <body>
 <div><a href="../../index.html"> 返回首页</a></div>
 
-<label>请输入北京今天空气质量：<input id="aqi-input" type="text"></label>
-<button id="button">确认填写</button>
+  <h3>污染城市列表</h3>
+  <ul id="aqi-list">
+<!--   
+    <li>第一名：福州（样例），10</li>
+      <li>第二名：福州（样例），10</li> -->
+  </ul>
+    <script type="text/javascript">
+    var aqiData = [
+    ["北京", 90],
+    ["上海", 50],
+    ["福州", 10],
+    ["广州", 50],
+    ["成都", 90],
+    ["西安", 100]
+    ];
 
-<div>您输入的值是：<span id="aqi-display">尚无录入</span></div>
+    (function () {
 
-<script type="text/javascript">
-
-    (function() {
-        /*
-         在注释下方写下代码
-         给按钮button绑定一个点击事件
-         在事件处理函数中
-         获取aqi-input输入的值，并显示在aqi-display中
-         */
-
-        var button = document.getElementById("button");
-        button.onclick=function () {
-            var val = document.getElementById("aqi-input").value;
-            console.log(val);
-            var showValue = document.getElementById("aqi-display");
-            console.log(showValue);
-            showValue.innerHTML = val ;
+    /*
+    在注释下方编写代码
+    遍历读取aqiData中各个城市的数据
+    将空气质量指数大于60的城市显示到aqi-list的列表中
+    */
+        var li = "";
+        var aqiUl = document.getElementById("aqi-list");
+        for( var i=0; i<aqiData.length; i++ ) {
+            if(aqiData[i][1] > 60) {
+                li += "<li>"+aqiData[i][0]+"</li>"
+            }
         }
-
+        aqiUl.innerHTML = li;
     })();
 
-</script>
+    </script>
 <div id="question">
     <span class="close">X</span>
-    <img src="01.png" bigsrc="JS_task_01.png" alt="">
+    <img src="02.png" bigsrc="JS_task_02.png" alt="">
 </div>
 <script type="text/javascript" src="../../js/public.js"></script>
 </body>
