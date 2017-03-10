@@ -13,6 +13,34 @@ a {
     text-decoration: none;
 }
 
+/*other*/
+#question {
+    position:absolute;
+    top: 0px;
+    right: 0px;
+    width: 550px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.close {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 15px;
+    background: #AAA;
+    text-align: center;
+    line-height: 30px;
+}
+
+#question img {
+    width: 550px;
+}
+
 /*title*/
 #header-wrapper {
     width: 100%;
