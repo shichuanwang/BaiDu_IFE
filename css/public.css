@@ -82,3 +82,25 @@ a {
 .html , .js {
     display: none;
 }
+
+
+/*代码片段 样式*/
+.snippet {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    background: #000;
+    color:#fff;
+    border-radius: 5px;
+}
+
+.snippet-order {
+    width: 20px;
+    text-align: center;
+    color: #999;
+    border-right: 2px solid #bbb;
+}
+.snippet-content {
+    color: #e7e7e7;
+    padding: 0px 10px;
+}
