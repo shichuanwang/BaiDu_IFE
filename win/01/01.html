@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>get window</title>
+</head>
+<body>
+   <h5>获取 Window 對象</h5>
+   <div class="showWindowObject"></div>
+   <div class="showWindowObject"></div>
+   <script>
+       ( function() {
+           var getShowWindowDiv =  document.getElementsByClassName("showWindowObject");
+           getShowWindowDiv[0].innerHTML = "方式1: document.defaultView.outerHeight ------"+document.defaultView.outerHeight;
+           getShowWindowDiv[1].innerHTML = "方式2: window.outerHeight ------"+window.outerHeight;
+       })()
+   </script>
+
+
+   <h5>window的交互功能</h5>
+   <div>关闭窗口,window.close()  <button onclick="window.close()">关闭窗口</button></div>
+   <div>提示用戶打印頁面,window.print() <button onclick="window.print()">点击打印</button></div>
+   <div>让文档相对于当前位置进行滚动,window.scrollBy()  <button onclick="window.scrollBy()"> 滚动</button></div>
+   <div>滚轮滚动到指定位置,window.scrollTo()  <button onclick="window.scrollTo(0,100)">滚动到指定位置</button></div>
+   <div>停止载入文档,window.stop()   <button onclick="window.stop()">停止载入文档</button></div>
+
+   <h5>window 提示功能</h5>
+   <div>alert(msg)  <button onclick="alert('alert test')">alert</button></div>
+   <div>confirm(msg) <button onclick="confirm('你睡觉了吗？')">confirm</button></div>
+   <div>prompt(msg,val)  <button onclick="prompt('请输入密码！', 123456)"> Prompt</button></div>
+   <div>showModalDialog(url)  <button onclick="window.showModalDialog(window.location)"> 弹出窗口，显示指定Url(被各浏览器商禁用了)</button></div>
+
+</body>
+</html>

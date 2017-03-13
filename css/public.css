@@ -9,7 +9,7 @@ li {
 }
 
 a {
-    color: #AAA;
+    color: #222;
     text-decoration: none;
 }
 
@@ -25,7 +25,7 @@ a {
 
 .close {
     display: none;
-    position: absolute;
+    position: fixed;
     top: 10px;
     right: 0px;
     width: 30px;
@@ -61,7 +61,7 @@ a {
 
 #content-left {
     position: absolute;
-    width: 10%;
+    width: 200px;
     height: 100%;
 }
 
