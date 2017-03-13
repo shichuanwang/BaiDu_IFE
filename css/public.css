@@ -88,6 +88,7 @@ a {
 .snippet {
     display: block;
     width: 80%;
+    margin: 5px 0;
     padding: 10px;
     background: #000;
     color:#fff;
