@@ -35,8 +35,32 @@
             }
 
         }
-        
     }
-
-
 })()
+
+// 给代码片段写入内容的共用方法
+// snippet 翻译为: 代码段
+// snippetdata 的数据格式如下:
+//  snippetdata = {
+//    "data-datasource的属性值" :["test","",""]
+//  }
+function setSnippetContext( snippetdata ) {
+    var snippetTag = document.getElementsByClassName("snippet"),
+        datasource = "",
+        lineDataSource = [],
+        content = "";
+    for(var i=0; i<snippetTag.length; i++) {
+        datasource = snippetTag[i].getAttribute("data-datasource");
+        if(datasource && snippetdata[datasource]) {
+            lineDataSource = snippetdata[datasource];
+            content = "<table>";
+            for(var j=0; j<lineDataSource.length; j++) {
+                content += "<tr><td class='snippet-order' type='"+(j+1)+"'>"+(j+1)+"</td>"+ 
+                                "<td class='snippet-content' type='"+(j+1)+"'>"+lineDataSource[j]+"</td>"+
+                           "</tr>";
+            }
+            content +="</table>";
+            snippetTag[i].innerHTML = content;
+        }
+    } 
+}
