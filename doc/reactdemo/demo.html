@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>React</title>
+    <link rel="stylesheet" href="../../css/public.css">
+    <script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+    <script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+    <script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+</head>
+<body>
+<div><a href="../react.html"> 返回react页面</a></div>
+
+<div>
+    <h5>一. demo 1</h5>
+    <P>效果：</P>
+    <div id="demo1"></div>
+    <P>源代码：</P>
+    <code class="snippet" data-datasource="demo1"></code>
+    <script type="text/babel">
+      ReactDOM.render(
+        <h1>Hello, world!</h1>,
+        document.getElementById('demo1')
+      );
+    </script>
+</div>
+
+    
+<script type="text/javascript" src="../../js/public.js"></script>
+<script>
+    var snippetdata = {
+        demo1: [
+            "ReactDOM.render(",
+            "<span><</span>h1<span>></span>Hello, world!<span><</span>/h1<span>></span>,",
+            " document.getElementById('example')",
+            ");"
+        ]
+    }
+    setSnippetContext( snippetdata );
+</script>
+</div>
+</body>
+</html>
