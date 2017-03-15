@@ -1,3 +1,32 @@
+// 设置公共对象样式
+const styles = {
+    navline: "float:left;width:90px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
+}
+
+// 设置公共的数据源 , 所用名称前加上大写G_
+// 导航条数据
+const G_navData = [
+    { linkPath: "" , navType: "html", text:"html" },
+    { linkPath: "" , navType: "CSS", text:"CSS3" },
+    { linkPath: "" , navType: "JavaScript", text:"javaScript" },
+    { linkPath: "" , navType: "echarts", text:"echarts" },
+    { linkPath: "" , navType: "react", text:"react" },
+    { linkPath: "" , navType: "IFT", text:"百度IFE任务" }
+];
+
+// 设置导航条
+( function() {
+    var nav = "<div style='width:1000px;margin:0px auto;'>";
+    var headerNav = document.getElementById("header-nav");
+    for(var n=0; n<G_navData.length; n++) {
+        nav += "<p style='"+styles.navline+"' data-type='"+G_navData[n].navType+"'>"+
+                    "<a href='"+G_navData[n].linkPath+"'>"+G_navData[n].text+"</a>"+
+               "</p>";
+    }
+    headerNav.innerHTML = nav+"</div>";
+})()
+
+// 设置IFE 任务显示图片
 ( function() {
     var question = document.getElementById("question");
     var span = document.getElementsByClassName("close")[0];
@@ -17,8 +46,10 @@
             span.style.zIndex = "10";
         }
     }
+})()
 
-    // 代码片段
+// load代码片段
+( function() {
     var snippetContent = document.getElementsByClassName("snippet-content");
     if(snippetContent){
         var text="",dictText = "";
@@ -37,6 +68,7 @@
         }
     }
 })()
+
 
 // 给代码片段写入内容的共用方法
 // snippet 翻译为: 代码段
