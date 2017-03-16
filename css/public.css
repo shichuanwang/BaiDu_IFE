@@ -114,6 +114,16 @@ a {
     background: #fbfbfb;
 }
 
+/*content-modle 内容样式设置*/
+.content-modle-title {
+    font-size:18px;
+    font-weight:700;
+}
+.content-modle-discription {
+    font-size:14px;
+    text-indent:2em;
+}
+
 #content-right {
     position: absolute;
     left: 920px;

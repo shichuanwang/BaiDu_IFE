@@ -17,7 +17,8 @@ const G_navData = [
 
 const G_contentSource = {
     html: [
-        { text:"html历史"}
+        {id: 1, title:"html历史", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription"},
+        {id: 2, title:"html语义化", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription"}
     ]
 };
 
@@ -34,14 +35,15 @@ const G_contentSource = {
 })()
 
 function selectSourceType(obj){
-    var showContent = "<ul>",
+    var showContent = "<div>",
         sourceType = obj.getAttribute("data-type"),
         sourceData = G_contentSource[sourceType],
         contentModle = document.getElementById("content-modle");
     for(var i=0; i<sourceData.length; i++) {
-        showContent += "<li>"+sourceData[i].text+"</li>";
+        showContent += "<p class='"+sourceData[i].titleClass+"'>"+sourceData[i].id+". "+sourceData[i].title+"</p>"+
+                       "<p class='"+sourceData[i].contentClass+"'>"+sourceData[i].discription+"</p>";
     }
-    showContent += "</ul>";
+    showContent += "</div>";
     contentModle.innerHTML = showContent;
 }
 
