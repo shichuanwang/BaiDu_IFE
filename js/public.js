@@ -1,3 +1,7 @@
+/*
+    加载页面时执行的方法
+*/
+
 (function() {
     // 设置导航条
     var nav = "<div style='width:1000px;margin:0px auto;'>";
@@ -8,6 +12,7 @@
                "</p>";
     }
     headerNav.innerHTML = nav+"</div>";
+
 
     // 设置IFE 任务显示图片 
     var question = document.getElementById("question");
@@ -64,6 +69,30 @@ function selectSourceType(obj){
     }
     showContent += "</div>";
     contentModle.innerHTML = showContent;
+    fengye( sourceData, 1);
+}
+
+
+function fengye( data, page){
+    // 初始化实现内容分页
+    var fenye = {
+        pageCount: 1,
+        beforePage: 0,
+        nowPage: 1,
+        nextPage: 0
+    }
+    var fenYeDiv = document.getElementById("content-modle-fenye");
+    if(data.length < 11) {
+        fenYeDiv.innerHTML = "<span id='pageCount'>共1页</span>"+
+                        "<span id='beforePage' style='color:#e6e6e6;'>上一页</span>"+
+                        "<span id='nouPage' style='color:blue;'>第1页</span>"+
+                        "<span id='nextPage' style='color:e6e6e6;'>下一页</span>";
+    } else if( data.length > 10 ) {
+        fenYeDiv.innerHTML = "<span id='pageCount'>共"+Math.ceil(data.length/10)+"页</span>"+
+                        "<span id='beforePage' class='content-modle-more'>上一页</span>"+
+                        "<span id='nouPage' style='color:blue;'>第"+page+"页</span>"+
+                        "<span id='nextPage' class='content-modle-more'>下一页</span>";
+    }
 }
 
 
