@@ -113,8 +113,12 @@ a {
     height: 1000px;
     background: #fbfbfb;
 }
-
-/*content-modle 内容样式设置*/
+/*content-modle 内容过滤条或搜索框*/
+#content-modle-showselect {
+    width: 100%;
+    height: 50px;
+}
+/*content-modle-showcontent 内容样式设置*/
 .content-modle-title {
     font-size:18px;
     font-weight:700;
@@ -122,6 +126,17 @@ a {
 .content-modle-discription {
     font-size:14px;
     text-indent:2em;
+}
+
+.content-modle-more {
+    text-decoration: underline;
+    color: #9dccb6;
+}
+
+/*content-modle 内容分页*/
+#content-modle-fenye {
+    width: 100%;
+    height: 50px;
 }
 
 #content-right {

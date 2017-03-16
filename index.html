@@ -16,41 +16,17 @@
     <div id="container-wrapper">
         <div id="content">
             <div id="content-left">
-                <ul>
-                    <li data-type="html">HTML</li>
-                    <li data-type="js">JavaScript</li>
-                </ul>
+                
             </div>
             <div id="content-modle">
-                <ul class="html">
-                    <li><a class="taskTarget" href="HTML_task/01/01.html">任务一 HTML语义化</a></li>
-                    <li><a class="taskTarget" href="HTML_task/02/02.html">任务二 HTML基础与css编码</a></li>
-                    <li><a class="taskTarget" href="HTML_task/03/03.html">任务三 三栏式布局</a></li>
-                    <li><a class="taskTarget" href="HTML_task/04/04.html">任务四 定位与居中</a></li>
-                    <li><a class="taskTarget" href="HTML_task/05/05.html">任务五</a></li>
-                    <li><a class="taskTarget" href="HTML_task/06/06.html">任务六</a></li>
-                    <li><a class="taskTarget" href="HTML_task/07/07.html">任务七</a></li>
-                </ul>
-                <ul class="js">
-                    <li><a class="taskTarget" href="JS_task/01/01.html">任务一 DOM文档结构</a></li>
-                    <li><a class="taskTarget" href="JS_task/02/02.html">任务二 js的if、for等取赋值</a></li>
-                    <li><a class="taskTarget" href="JS_task/03/03.html">任务三</a></li>
-                    <li><a class="taskTarget" href="JS_task/04/04.html">任务四</a></li>
-                    <li><a class="taskTarget" href="JS_task/05/05.html">任务五</a></li>
-                    <li><a class="taskTarget" href="JS_task/06/06.html">任务六</a></li>
-                    <li><a class="taskTarget" href="JS_task/07/07.html">任务七</a></li>
-                    <li><a class="taskTarget" href="JS_task/08/08.html">任务八</a></li>
-                    <li><a class="taskTarget" href="JS_task/09/09.html">任务九</a></li>
-                    <li><a class="taskTarget" href="JS_task/10/10.html">任务十</a></li>
-                    <li><a class="taskTarget" href="JS_task/11/11.html">任务十一</a></li>
-                    <li><a class="taskTarget" href="JS_task/12/12.html">任务十二</a></li>
-                    <li><a class="taskTarget" href="JS_task/13/13.html">任务十三</a></li>
-                    <li><a class="taskTarget" href="JS_task/14/14.html">任务十四</a></li>
-                    <li><a class="taskTarget" href="JS_task/15/15.html">任务十五</a></li>
-                    <li><a class="taskTarget" href="JS_task/16/16.html">任务十六</a></li>
-                    <li><a class="taskTarget" href="JS_task/17/17.html">任务十七</a></li>
-                    <li><a class="taskTarget" href="JS_task/18/18.html">任务十八</a></li>
-                </ul>
+                <div id="content-modle-showselect"></div>
+                <div id="content-modle-showcontent"></div>
+                <div id="content-modle-fenye">
+                    <span>共1页</span>
+                    <span>上一页</span>
+                    <span>第1页</span>
+                    <span>下一页</span>
+                </div>
             </div>
             <div id="content-right">
                 <h4>相关文档</h4>
@@ -64,32 +40,11 @@
     <div id="footer-wrapper">
         
     </div>
+    <script type="text/javascript" src="js/datasource.js"></script>
     <script type="text/javascript" src="js/public.js"></script>
     <script>
-        ( function() {
-            //默认显示 html 任务
-            var contentModle = document.getElementById("content-modle");
-            var modleShow = contentModle.getElementsByTagName("ul");
-            modleShow[0].style.display = "block";
-
-            // 给content-left 绑定事件
-            var contentleft = document.getElementById("content-left"),
-                leftShow = contentleft.getElementsByTagName("li"),
-                tartetClass= "",
-                objectDataType = "";
-            for(var i=0; i<leftShow.length; i++) {
-                leftShow[i].onclick = function() {
-                    objectDataType = this.getAttribute("data-type");
-                    for(var j=0; j<modleShow.length; j++) {
-                        tartetClass = modleShow[j].className;
-                        modleShow[j].style.display = "none"
-                        if(objectDataType == tartetClass) {
-                            modleShow[j].style.display = "block";
-                        }
-                    }
-                }
-            }
-        } )()
+        var index = "<a href='javascirpt:void(0);' data-type='index' ></a>";
+        selectSourceType(index)
     </script>
 </body>
 </html>

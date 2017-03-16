@@ -1,29 +1,5 @@
-// 设置公共对象样式
-const styles = {
-    navline: "float:left;width:90px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"
-}
-
-// 设置公共的数据源 , 所用名称前加上大写G_
-// 导航条数据
-const G_navData = [
-    { linkPath: "" , navType: "index", text:"首页" },
-    { linkPath: "" , navType: "html", text:"html" },
-    { linkPath: "" , navType: "CSS", text:"CSS3" },
-    { linkPath: "" , navType: "JavaScript", text:"javaScript" },
-    { linkPath: "" , navType: "echarts", text:"echarts" },
-    { linkPath: "" , navType: "react", text:"react" },
-    { linkPath: "" , navType: "IFT", text:"百度IFE任务" }
-];
-
-const G_contentSource = {
-    html: [
-        {id: 1, title:"html历史", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription"},
-        {id: 2, title:"html语义化", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription"}
-    ]
-};
-
-// 设置导航条
 (function() {
+    // 设置导航条
     var nav = "<div style='width:1000px;margin:0px auto;'>";
     var headerNav = document.getElementById("header-nav");
     for(var n=0; n<G_navData.length; n++) {
@@ -32,23 +8,8 @@ const G_contentSource = {
                "</p>";
     }
     headerNav.innerHTML = nav+"</div>";
-})()
 
-function selectSourceType(obj){
-    var showContent = "<div>",
-        sourceType = obj.getAttribute("data-type"),
-        sourceData = G_contentSource[sourceType],
-        contentModle = document.getElementById("content-modle");
-    for(var i=0; i<sourceData.length; i++) {
-        showContent += "<p class='"+sourceData[i].titleClass+"'>"+sourceData[i].id+". "+sourceData[i].title+"</p>"+
-                       "<p class='"+sourceData[i].contentClass+"'>"+sourceData[i].discription+"</p>";
-    }
-    showContent += "</div>";
-    contentModle.innerHTML = showContent;
-}
-
-// 设置IFE 任务显示图片
-(function() {
+    // 设置IFE 任务显示图片 
     var question = document.getElementById("question");
     var span = document.getElementsByClassName("close")[0];
     if(question){
@@ -67,28 +28,44 @@ function selectSourceType(obj){
             span.style.zIndex = "10";
         }
     }
+
+
+    // load代码片段
+    var snippetContent = document.getElementsByClassName("snippet-content");
+    if(snippetContent){
+        var text="",dictText = "";
+        for(var i=0; i< snippetContent.length; i++) {
+            text = snippetContent[i].innerText;
+            if( text.indexOf("var") >　-1) {
+                dictText = text.substr(text.indexOf("var"),3)
+                snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#a0d2ec;'>var</i>");
+            }
+
+            if( text.indexOf("function") >　-1) {
+                dictText = text.substr(text.indexOf("function"),8)
+                snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#a0d2ec;'>function</i>");
+            }
+
+        }
+    }
 })()
 
-// load代码片段
-// (function(){
-//     var snippetContent = document.getElementsByClassName("snippet-content");
-//     if(snippetContent){
-//         var text="",dictText = "";
-//         for(var i=0; i< snippetContent.length; i++) {
-//             text = snippetContent[i].innerText;
-//             if( text.indexOf("var") >　-1) {
-//                 dictText = text.substr(text.indexOf("var"),3)
-//                 snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#a0d2ec;'>var</i>");
-//             }
-//
-//             if( text.indexOf("function") >　-1) {
-//                 dictText = text.substr(text.indexOf("function"),8)
-//                 snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#a0d2ec;'>function</i>");
-//             }
-//
-//         }
-//     }
-// })()
+// 选择导航内容
+function selectSourceType(obj){
+    var showContent = "<div>",
+        sourceType = (typeof obj == "string") ? "index":obj.getAttribute("data-type"),
+        sourceData = G_contentSource[sourceType],
+        contentModle = document.getElementById("content-modle-showcontent");
+    for(var i=0; i<sourceData.length; i++) {
+        showContent += "<p class='"+sourceData[i].titleClass+"'><i style='color:#9dccb6;font-size:14px;'>["+sourceData[i].type+"]</i>. "+sourceData[i].title+"</p>"+
+                       "<p class='"+sourceData[i].contentClass+"'>"+sourceData[i].discription+
+                            "... <a href='"+sourceData[i].linkPath+"' class='"+sourceData[i].aStyle+"'>更多>></a>"+
+                        "</p>";
+    }
+    showContent += "</div>";
+    contentModle.innerHTML = showContent;
+}
+
 
 // 给代码片段写入内容的共用方法
 // snippet 翻译为: 代码段
