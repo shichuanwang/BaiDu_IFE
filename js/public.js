@@ -81,18 +81,18 @@ function selectSourceType(obj){
         dataLength = 0,
         contentModle = document.getElementById("content-modle-showcontent");
     // 设置主区内容分页
-    if(sourceData.length < 11) {
+    if(sourceData.length < G_PAGECOUNT+1) {
         fenYeDiv.innerHTML = "<span id='pageCount'>共1页</span>"+
                         "<span id='beforePage' class='beforepage-false'>上一页</span>"+
                         "<span id='nowPage' style='color:blue;'>第1页</span>"+
                         "<span id='nextPage' class='nextpage-false'>下一页</span>";
         dataLength = sourceData.length;
-    } else if( sourceData.length > 10 ) {
-        fenYeDiv.innerHTML = "<span id='pageCount'>共"+Math.ceil(sourceData.length/10)+"页</span>"+
+    } else if( sourceData.length > G_PAGECOUNT ) {
+        fenYeDiv.innerHTML = "<span id='pageCount'>共"+Math.ceil(sourceData.length/G_PAGECOUNT)+"页</span>"+
                         "<span id='beforePage' class='beforepage-ture' onclick=\"fenye( '"+sourceType+"', 'pre')\">上一页</span>"+
                         "<span id='nowPage' style='color:blue;' data-nowPage='1'>第1页</span>"+
                         "<span id='nextPage'  class='nextpage-true' onclick=\"fenye( '"+sourceType+"', 'next')\">下一页</span>";
-        dataLength = 10;
+        dataLength = G_PAGECOUNT;
     }
     // 设置主区内容显示
     for(var i=0; i<dataLength; i++) {
@@ -120,15 +120,15 @@ function fenye( sourcetype, dict){
             nowPage.setAttribute("data-nowPage",page);
         }
     }else if( dict == "next") {
-        if(page < Math.ceil(data.length/10) ) {
+        if(page < Math.ceil(data.length/G_PAGECOUNT) ) {
             page = page + 1;
             nowPage.innerHTML = "第"+page+"页";
             nowPage.setAttribute("data-nowPage",page);
             
         }
     }
-    starNum = (page-1)*10;
-    endNum = (data.length-starNum > 10) ? (starNum+10):  data.length;
+    starNum = (page-1)*G_PAGECOUNT;
+    endNum = (data.length-starNum > G_PAGECOUNT) ? (starNum+G_PAGECOUNT):  data.length;
     for(var i= starNum; i< endNum; i++) {
         showContent += "<p class='"+data[i].titleClass+"'><i style='color:#9dccb6;font-size:14px;'>["+data[i].type+"]</i>. "+data[i].title+"</p>"+
                        "<p class='"+data[i].contentClass+"'>"+data[i].discription+

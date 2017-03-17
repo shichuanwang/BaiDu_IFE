@@ -9,6 +9,9 @@ const styles = {
     }
 }
 
+//每页内容条数 设为number
+const G_PAGECOUNT = 15;
+
 // 设置公共的数据源 , 所用名称前加上大写G_
 // 导航条数据
 const G_navData = [
@@ -23,7 +26,7 @@ const G_navData = [
 
 // 前端资源网站汇总
 const G_webSource = [
-    { title: "前端这个圈子",
+    { title: "前端资源",
       content: [
             { type: "社区/组织",
                 webfont: [
@@ -56,9 +59,10 @@ const G_webSource = [
             },
             { type: "国内个人",
                 webfont: [
-                    { name:"CSS森林", url: "http://www.w3.org/", discrible: ""},
-                    { name:"twinsen", url: "http://www.chinaw3c.org/member-meetings.html#tpac", discrible: ""},
-                    { name:"艾文王", url: "http://w3ctech.com/", discrible: ""}
+                    { name:"CSS森林", url: "http://www.cssforest.org/blog/", discrible: ""},
+                    { name:"twinsen", url: "http://www.twinsenliang.net/", discrible: ""},
+                    { name:"艾文王", url: "http://blog.ivane.me/", discrible: ""},
+                    { name:"张鑫旭", url: "http://www.zhangxinxu.com/wordpress/", discrible: ""}
                 ]
             },
             { type: "国外综合",
@@ -89,6 +93,88 @@ const G_webSource = [
                 ]
             }
         ]
+    },
+    { title: "浏览器百宝箱",
+        content: [
+            { type: "综合",
+                webfont: [
+                    { name:"谷歌浏览器", url: "https://www.google.com/intl/zh-CN/chrome/browser/", discrible: ""},
+                    { name:"火狐浏览器", url: "http://www.firefox.com.cn/", discrible: ""},
+                    { name:"Safari浏览器", url: "http://www.apple.com/cn/safari/", discrible: ""},
+                    { name:"IE浏览器", url: "http://windows.microsoft.com/zh-cn/internet-explorer/download-ie", discrible: ""}
+                ]
+            },
+            { type: "插件",
+                webfont: [
+                    { name:"[谷歌]ChromeDevTools", url: "https://developers.google.com/chrome-developer-tools/?hl=zh-CN", discrible: ""},
+                    { name:"[火狐]FireBUG", url: "https://addons.mozilla.org/zh-CN/firefox/addon/firebug/", discrible: "Firebug插件集成了浏览网页的同时随手可得的丰富开发工具，你可以对任何网页的 CSS、HTML 和 JavaScript 进行实时编辑、调试和监控"},
+                    { name:"[火狐]cssUsage", url: "https://addons.mozilla.org/zh-CN/firefox/addon/css-usage/", discrible: "css-usage插件用于察看哪些CSS被用到"},
+                    { name:"[火狐]YSlow", url: "https://addons.mozilla.org/zh-CN/firefox/addon/yslow/", discrible: "YSlow是Yahoo发布的一款基于FireFox的插件，用于全面分析网站性能"},
+                    { name:"[火狐]WebDeveloper", url: "https://addons.mozilla.org/zh-CN/firefox/addon/web-developer/", discrible: "Web Developer插件用于页面强大的元素分析，它加入了几个菜单与一条工具栏以及多种网页开发者工具"},
+                    { name:"[火狐]HtmlValidator", url: "https://addons.mozilla.org/zh-CN/firefox/addon/html-validator/", discrible: "html-validator插件用于验证网站是否遵守w3c标准，装上该插件后，可以在页面源码模式中检测你的html代码"},
+                    { name:"[火狐]colorzilla", url: "https://addons.mozilla.org/zh-CN/firefox/addon/colorzilla/", discrible: "colorzilla插件用于页面去色、渐变生成等"},
+                    { name:"[火狐]httpfox", url: "https://addons.mozilla.org/ZH-cn/firefox/addon/httpfox/", discrible: "httpfox插件用于HTTP分析器的扩展"}
+                ]
+            }
+        ]
+    },
+    { title: "前端工具箱",
+        content: [
+            { type: "腾讯系",
+                webfont: [
+                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                ]
+            }
+        ]
+    },
+    { title: "CSS/HTML",
+        content: [
+            { type: "CSS框架",
+                webfont: [
+                    { name:"Normalize.css", url: "http://necolas.github.io/normalize.css/", discrible: ""},
+                    { name:"lessFramework", url: "http://lessframework.com/", discrible: ""},
+                    { name:"Formee", url: "http://www.formee.org/", discrible: ""},
+                    { name:"960GRID", url: "http://960.gs/", discrible: ""},
+                    { name:"ResponsiveGridSystem", url: "http://responsive.gs/", discrible: ""}
+                ]
+            }
+        ]
+    },
+    { title: "JAVASCRIPT",
+        content: [
+            { type: "腾讯系",
+                webfont: [
+                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                ]
+            }
+        ]
+    },
+    { title: "多终端",
+        content: [
+            { type: "腾讯系",
+                webfont: [
+                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                ]
+            }
+        ]
+    },
+    { title: "综合资源库",
+        content: [
+            { type: "腾讯系",
+                webfont: [
+                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                ]
+            }
+        ]
+    },
+    { title: "设计和交互",
+        content: [
+            { type: "腾讯系",
+                webfont: [
+                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                ]
+            }
+        ]
     }
 ]
 /*
@@ -109,7 +195,10 @@ G_contentSource = {
 */
 const G_contentSource = {
     index: [
-        {id: 2, type: "首页",title:"待添加内容", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
+        {id: 1, type: "方式",title:"费曼学习法", titleClass: "content-modle-title",
+         discription:"李笑来在《新生》一书里提到：概念是一切知识架构的基石。所谓的“独立思考” ，对其最朴素的描述无非是：能够独立地、正确地使用正确的概念",
+         contentClass:"content-modle-discription", linkPath:"index/learning.html", aStyle: "content-modle-more"
+        }
     ],
     html: [
         {id: 1, type: "公共", title:"html历史", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
