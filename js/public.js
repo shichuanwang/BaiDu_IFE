@@ -20,10 +20,10 @@
         showAside += "<div style='"+styles.webfont.wrapper+"'><div style='"+styles.webfont.title+"'>"+G_webSource[i].title+"</div>";
         for(var j=0; j<G_webSource[i].content.length; j++){
             linedata = G_webSource[i].content[j];
-            showAside += "<i>"+linedata.type+"</i>";
+            showAside += "<p style='"+styles.webfont.type+"'>"+linedata.type+"</p>";
             for(var k=0; k<linedata.webfont.length; k++) {
                 line = linedata.webfont[k];
-                showAside += "<p><a href='"+line.url+"' alt='"+line.discrible+"'>"+line.name+"</a></p>";
+                showAside += "<span style='"+styles.webfont.webfont+"'><a href='"+line.url+"' title='"+line.discrible+"'>"+line.name+"</a></span>";
             }
         }
         showAside += "</div>";

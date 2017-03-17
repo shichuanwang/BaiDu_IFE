@@ -2,8 +2,10 @@
 const styles = {
     navline: "float:left;width:90px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;",// 导航栏目样式
     webfont: {
-        wrapper:"width:100%;",
-        title: "width:100%;height:35px;text-align:center;line-height:35px;background:#5a887b;color:#9dccb6;"
+        wrapper:"width:100%;border-bottom:1px dotted #005f3c;",
+        title: "width:100%;height:35px;text-align:center;line-height:35px;background:#005f3c;color:#9dccb6;",
+        type: "margin:5px;padding:0 5px;background:#9dccb6;font-size:14px;color:#005f3c;border-radius:2px;",
+        webfont: "font-size:12px;color:#005f3c;margin: 0 5px;"
     }
 }
 
@@ -19,14 +21,62 @@ const G_navData = [
     { linkPath: "" , navType: "IFT", text:"百度IFE任务" }
 ];
 
-
 // 前端资源网站汇总
 const G_webSource = [
     { title: "前端这个圈子",
       content: [
             { type: "社区/组织",
                 webfont: [
-                    { name:"W3C", url: "http://www.w3.org/", discrible: "万维网联盟创建于1994年，是WEB技术领域最具权威和影响力的国际中立性技术标准机构"}
+                    { name:"W3C", url: "http://www.w3.org/", discrible: "万维网联盟创建于1994年，是WEB技术领域最具权威和影响力的国际中立性技术标准机构"},
+                    { name:"TPAC", url: "http://www.chinaw3c.org/member-meetings.html#tpac", discrible: "TPAC是W3C的年度重要技术会议之一，历届参会规模大约300-450人，参会者将在五天的时间里，共同协调未来开放Web平台的技术方向，讨论W3C的组织策略"},
+                    { name:"w3ctech", url: "http://w3ctech.com/", discrible: "w3ctech.com成立于2009年10月，自成立以来受到了W3C等组织、公司、个人的大力支持与帮助。在普及W3C标准的基础上，交流会将集合国内前端开发者的力量，在未来2~3年的时间内形成既与国际接轨又符合中国国情的web标准体系"},
+                    { name:"WebReBuild", url: "http://www.webrebuild.org/", discrible: ""},
+                    { name:"HTML5研究小组", url: "http://www.mhtml5.com/", discrible: "HTML5研究小组是由个人和企业HTML5开发者于2011年共同发起，是中国首个HTML5推广和交流的开放组织，于2012年2月正式加入W3C"},
+                    { name:"阿里技术嘉年华", url: "http://adc.alibabatech.org/", discrible: ""},
+                    { name:"京/沪JS", url: "http://jsconf.cn/", discrible: ""},
+                    { name:"前端圈", url: "http://fequan.com/", discrible: ""},
+                    { name:"HTML5梦工厂", url: "http://www.html5dw.com/", discrible: ""},
+                    { name:"无障碍联盟", url: "http://accessibilityunion.org/", discrible: ""}
+                ]
+            },
+            { type: "国内综合",
+                webfont: [
+                    { name:"前端观察", url: "http://www.qianduan.net/", discrible: ""},
+                    { name:"阮一峰", url: "http://www.chinaw3c.org/member-meetings.html#tpac", discrible: ""},
+                    { name:"W3CPLUS", url: "http://www.w3cplus.com/", discrible: ""},
+                    { name:"W3CFUNS", url: "http://www.w3cfuns.com/", discrible: ""},
+                    { name:"大前端", url: "http://www.daqianduan.com/", discrible: ""},
+                    { name:"W3CHELP", url: "http://www.w3help.org/zh-cn/", discrible: ""},
+                    { name:"W3CSCHOOL", url: "http://www.w3school.com.cn/", discrible: ""},
+                    { name:"HTML5中国", url: "http://www.html5cn.org/", discrible: ""},
+                    { name:"前端乱炖", url: "http://www.html-js.com/", discrible: ""},
+                    { name:"F2E社区", url: "http://f2e.im/", discrible: ""},
+                    { name:"MDN", url: "https://developer.mozilla.org/zh-CN/", discrible: "Mozilla 开发者网络"}
+                ]
+            },
+            { type: "国内个人",
+                webfont: [
+                    { name:"CSS森林", url: "http://www.w3.org/", discrible: ""},
+                    { name:"twinsen", url: "http://www.chinaw3c.org/member-meetings.html#tpac", discrible: ""},
+                    { name:"艾文王", url: "http://w3ctech.com/", discrible: ""}
+                ]
+            },
+            { type: "国外综合",
+                webfont: [
+                    { name:"CSS-Tricks", url: "http://www.w3.org/", discrible: ""},
+                    { name:"WebPlatform", url: "http://www.chinaw3c.org/member-meetings.html#tpac", discrible: ""},
+                    { name:"SmashingMagazine", url: "http://w3ctech.com/", discrible: ""},
+                    { name:"cssZenGarden", url: "http://www.webrebuild.org/", discrible: ""}
+                ]
+            },
+            { type: "国外个人",
+                webfont: [
+                    { name:"SteveSouders", url: "http://www.w3.org/", discrible: "万维网联盟创建于1994年，是WEB技术领域最具权威和影响力的国际中立性技术标准机构"},
+                    { name:"JohnResig", url: "http://www.chinaw3c.org/member-meetings.html#tpac", discrible: "TPAC是W3C的年度重要技术会议之一，历届参会规模大约300-450人，参会者将在五天的时间里，共同协调未来开放Web平台的技术方向，讨论W3C的组织策略"},
+                    { name:"DouglasCrockford", url: "http://w3ctech.com/", discrible: ""},
+                    { name:"EricMeyer", url: "http://www.webrebuild.org/", discrible: ""},
+                    { name:"NicholasZakas", url: "http://www.mhtml5.com/", discrible: ""},
+                    { name:"Addy Osmani", url: "http://adc.alibabatech.org/", discrible: ""}
                 ]
             }
         ]
