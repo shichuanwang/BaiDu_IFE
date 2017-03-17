@@ -1,6 +1,10 @@
 // 设置公共对象样式
 const styles = {
-    navline: "float:left;width:90px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"// 导航栏目样式
+    navline: "float:left;width:90px;overflow: hidden; white-space: nowrap; text-overflow: ellipsis;",// 导航栏目样式
+    webfont: {
+        wrapper:"width:100%;",
+        title: "width:100%;height:35px;text-align:center;line-height:35px;background:#5a887b;color:#9dccb6;"
+    }
 }
 
 // 设置公共的数据源 , 所用名称前加上大写G_
@@ -14,6 +18,29 @@ const G_navData = [
     { linkPath: "" , navType: "react", text:"react" },
     { linkPath: "" , navType: "IFT", text:"百度IFE任务" }
 ];
+
+
+// 前端资源网站汇总
+const G_webSource = [
+    { title: "前端这个圈子",
+      content: [
+            { type: "社区/组织",
+                webfont: [
+                    { name:"W3C", url: "http://www.w3.org/", discrible: "万维网联盟创建于1994年，是WEB技术领域最具权威和影响力的国际中立性技术标准机构"}
+                ]
+            }
+        ]
+    },
+    { title: "UED团队博客",
+      content: [
+            { type: "腾讯系",
+                webfont: [
+                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                ]
+            }
+        ]
+    }
+]
 /*
 G_contentSource 结构说明
 G_contentSource = {

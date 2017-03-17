@@ -135,10 +135,17 @@ a {
 
 /*content-modle 内容分页*/
 #content-modle-fenye {
-    position: relative;
-    top: 800px;
+    position: absolute;
+    top: 950px;
     width: 100%;
     height: 50px;
+}
+
+.beforepage-true, .nextpage-true {
+    color: #9dccb6;
+}
+.beforepage-false, .nextpage-false {
+    color: #e6e6e6;
 }
 
 #content-right {
