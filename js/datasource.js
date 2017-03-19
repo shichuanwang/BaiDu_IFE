@@ -197,7 +197,15 @@ const G_contentSource = {
     index: [
         {id: 1, type: "方式",title:"费曼学习法", titleClass: "content-modle-title",
          discription:"李笑来在《新生》一书里提到：概念是一切知识架构的基石。所谓的“独立思考” ，对其最朴素的描述无非是：能够独立地、正确地使用正确的概念",
-         contentClass:"content-modle-discription", linkPath:"index/learning.html", aStyle: "content-modle-more"
+         contentClass:"content-modle-discription", linkPath:"index/feiMan.html", aStyle: "content-modle-more"
+        },
+        {id: 2, type: "方式",title:"思维导图学习法", titleClass: "content-modle-title",
+         discription:"思维导图学习法的好处很多：方便记录，加强记忆; 过程非常自由，结果十分清晰;",
+         contentClass:"content-modle-discription", linkPath:"index/xmind.html", aStyle: "content-modle-more"
+        },
+        {id: 3, type: "方式",title:"SQ3R阅读法", titleClass: "content-modle-title",
+            discription:"SQ3R这个阅读技巧的名字由五个单词的首字母组成，分别是Surveyl（浏览），Question（提问）， Read（阅读）， Recite（复述）， Review（复习）",
+            contentClass:"content-modle-discription", linkPath:"index/xmind.html", aStyle: "content-modle-more"
         }
     ],
     html: [
