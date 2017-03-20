@@ -210,16 +210,16 @@ const G_contentSource = {
         }
     ],
     html: [
-        {id: 1, type: "公共", title:"html历史", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
-        {id: 2, type: "HTML5",title:"html语义化", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
+        {id: 1, type: "公共", title:"html定义", titleClass: "content-modle-title",  discription:"HTML ,是超文本标记语言的英文缩写，是为网页创建和其他可在网页浏览器展示文字、以及非文字如图片、链接、音乐和程序等信息而设计的一种标记语言。", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
+        {id: 2, type: "公共",title:"标准通用标记语言", titleClass: "content-modle-title",  discription:"标准通用标记语言 ,又称通用标言，是一种定义电子文档结构、描述其内容的国际标准语言，有良好的扩展性，常用于数据分类和索引。一般在科技文献和政府办公中广泛应用。", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
     ],
     CSS: [
         {id: 1, type: "公共", title:"CSS历史", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
         {id: 2, type: "CSS",title:"CSS定义", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
     ],
     JavaScript: [
-        {id: 1, type: "公共", title:"JavaScript", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
-        {id: 2, type: "JavaScript",title:"JavaScript", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
+        {id: 1, type: "Json",title:"JSON概念", titleClass: "content-modle-title",  discription:"ECMA-262(E3) 中没有将JSON概念写到标准中，还好在 ECMA-262(E5) 中JSON的概念被正式引入了，包括全局的JSON对象和Date的toJSON方法。", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
+        {id: 2, type: "Json",title:"转换JSON的几种方式", titleClass: "content-modle-title",  discription:"方式1：eval(),　方式2: 构造函数Function(), 方式3：使用全局的JSON对象JSON.parse()", linkPath:"index/switchjson.html", aStyle: "content-modle-more"}
     ],
     echarts: [
         {id: 1, type: "公共", title:"echarts", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},

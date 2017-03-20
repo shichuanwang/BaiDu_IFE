@@ -98,7 +98,7 @@ function selectSourceType(obj){
     for(var i=0; i<dataLength; i++) {
         showContent += "<p class='"+sourceData[i].titleClass+"'><i style='color:#9dccb6;font-size:14px;'>["+sourceData[i].type+"]</i>. "+sourceData[i].title+"</p>"+
                        "<p class='"+sourceData[i].contentClass+"'>"+sourceData[i].discription+
-                            "... <a href='"+sourceData[i].linkPath+"' class='"+sourceData[i].aStyle+"'>更多>></a>"+
+                            " <a href='"+sourceData[i].linkPath+"' class='"+sourceData[i].aStyle+"'>更多>></a>"+
                         "</p>";
     }
     showContent += "</div>";
