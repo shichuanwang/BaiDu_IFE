@@ -5,7 +5,7 @@ const styles = {
         wrapper:"width:100%;border-bottom:1px dotted #005f3c;",
         title: "width:100%;height:35px;text-align:center;line-height:35px;background:#005f3c;color:#9dccb6;",
         type: "margin:5px;padding:0 5px;background:#9dccb6;font-size:14px;color:#005f3c;border-radius:2px;",
-        webfont: "font-size:12px;color:#005f3c;margin: 0 5px;"
+        webfont: "display:inline-block;font-size:12px;color:#005f3c;margin: 0 5px;"
     }
 }
 
@@ -21,7 +21,8 @@ const G_navData = [
     { linkPath: "" , navType: "JavaScript", text:"javaScript" },
     { linkPath: "" , navType: "echarts", text:"echarts" },
     { linkPath: "" , navType: "react", text:"react" },
-    { linkPath: "" , navType: "IFT", text:"百度IFE任务" }
+    { linkPath: "" , navType: "IFT", text:"百度IFE任务" },
+    { linkPath: "" , navType: "audition", text:"面试" }
 ];
 
 // 前端资源网站汇总
@@ -104,16 +105,16 @@ const G_webSource = [
                     { name:"IE浏览器", url: "http://windows.microsoft.com/zh-cn/internet-explorer/download-ie", discrible: ""}
                 ]
             },
-            { type: "插件",
+            { type: "插件{g:谷歌 , f: 火狐}",
                 webfont: [
-                    { name:"[谷歌]ChromeDevTools", url: "https://developers.google.com/chrome-developer-tools/?hl=zh-CN", discrible: ""},
-                    { name:"[火狐]FireBUG", url: "https://addons.mozilla.org/zh-CN/firefox/addon/firebug/", discrible: "Firebug插件集成了浏览网页的同时随手可得的丰富开发工具，你可以对任何网页的 CSS、HTML 和 JavaScript 进行实时编辑、调试和监控"},
-                    { name:"[火狐]cssUsage", url: "https://addons.mozilla.org/zh-CN/firefox/addon/css-usage/", discrible: "css-usage插件用于察看哪些CSS被用到"},
-                    { name:"[火狐]YSlow", url: "https://addons.mozilla.org/zh-CN/firefox/addon/yslow/", discrible: "YSlow是Yahoo发布的一款基于FireFox的插件，用于全面分析网站性能"},
-                    { name:"[火狐]WebDeveloper", url: "https://addons.mozilla.org/zh-CN/firefox/addon/web-developer/", discrible: "Web Developer插件用于页面强大的元素分析，它加入了几个菜单与一条工具栏以及多种网页开发者工具"},
-                    { name:"[火狐]HtmlValidator", url: "https://addons.mozilla.org/zh-CN/firefox/addon/html-validator/", discrible: "html-validator插件用于验证网站是否遵守w3c标准，装上该插件后，可以在页面源码模式中检测你的html代码"},
-                    { name:"[火狐]colorzilla", url: "https://addons.mozilla.org/zh-CN/firefox/addon/colorzilla/", discrible: "colorzilla插件用于页面去色、渐变生成等"},
-                    { name:"[火狐]httpfox", url: "https://addons.mozilla.org/ZH-cn/firefox/addon/httpfox/", discrible: "httpfox插件用于HTTP分析器的扩展"}
+                    { name:"[g]ChromeDevTools", url: "https://developers.google.com/chrome-developer-tools/?hl=zh-CN", discrible: ""},
+                    { name:"[f]FireBUG", url: "https://addons.mozilla.org/zh-CN/firefox/addon/firebug/", discrible: "Firebug插件集成了浏览网页的同时随手可得的丰富开发工具，你可以对任何网页的 CSS、HTML 和 JavaScript 进行实时编辑、调试和监控"},
+                    { name:"[f]cssUsage", url: "https://addons.mozilla.org/zh-CN/firefox/addon/css-usage/", discrible: "css-usage插件用于察看哪些CSS被用到"},
+                    { name:"[f]YSlow", url: "https://addons.mozilla.org/zh-CN/firefox/addon/yslow/", discrible: "YSlow是Yahoo发布的一款基于FireFox的插件，用于全面分析网站性能"},
+                    { name:"[f]WebDeveloper", url: "https://addons.mozilla.org/zh-CN/firefox/addon/web-developer/", discrible: "Web Developer插件用于页面强大的元素分析，它加入了几个菜单与一条工具栏以及多种网页开发者工具"},
+                    { name:"[f]HtmlValidator", url: "https://addons.mozilla.org/zh-CN/firefox/addon/html-validator/", discrible: "html-validator插件用于验证网站是否遵守w3c标准，装上该插件后，可以在页面源码模式中检测你的html代码"},
+                    { name:"[f]colorzilla", url: "https://addons.mozilla.org/zh-CN/firefox/addon/colorzilla/", discrible: "colorzilla插件用于页面去色、渐变生成等"},
+                    { name:"[f]httpfox", url: "https://addons.mozilla.org/ZH-cn/firefox/addon/httpfox/", discrible: "httpfox插件用于HTTP分析器的扩展"}
                 ]
             }
         ]
@@ -255,5 +256,9 @@ const G_contentSource = {
         {id: 16, type: "JavaScript",title:"任务十六", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"JS_task/16/16.html", aStyle: "content-modle-more"},
         {id: 17, type: "JavaScript",title:"任务十七", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"JS_task/17/17.html", aStyle: "content-modle-more"},
         {id: 18, type: "JavaScript",title:"任务十八", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"JS_task/18/18.html", aStyle: "content-modle-more"}
-    ]
+    ],
+    audition: [
+        {id: 1, type: "react", title:"react", titleClass: "content-modle-title",  discription:"面试 ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
+        {id: 2, type: "react",title:"react", titleClass: "content-modle-title",  discription:"面试 ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
+    ],
 };
