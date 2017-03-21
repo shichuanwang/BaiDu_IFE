@@ -9,19 +9,80 @@
 <div class="contentText">
     <h1>转换JSON的三种方式</h1>
     <div>
-        <h5>一.转换JSON的三种方式</h5>
-        <P>React 是一个JavaScript库</P>
-        <P>React 是一个用于构建用户界面的JavaScript库</P>
-        <P>React 是一个性能高、逻辑简单，且用于构建用户界面的JavaScript库</P>
-        <P>React 的特点如下：</P>
+        <h5>1,js自带的eval函数，其中需要添加小括号eval('('+str+')');</h5>
         <!--思考步骤：
             1.在公共js文件中，编写代码片段snippet与对应数据源绑定,自动刷去数据；
             2.在页面中每个snippet的标签上，自定义一个属性 data-datasource, 用于指定数据源；
             3.数据源 设置在当前需要的页面中；
         -->
-        <code class="snippet" data-datasource="reactCharacteristic"></code>
+        <code class="snippet" data-datasource="option1"></code>
 
-        <p>第一个示例 :　<a href="reactdemo/demo.html">demo</a></p>
+        <h5>2,new Function形式</h5>
+        <code class="snippet" data-datasource="option2"></code>
+
+        <h5>3,全局的JSON对象</h5>
+        <code class="snippet" data-datasource="option3"></code>
+<pre>
+    使用JSON.parse需严格遵守JSON规范，如属性都需用引号引起来，如下
+
+    代码如下:
+
+    var str = '{name:"jack"}'; 
+    var obj = JSON.parse(str); // --> parse error
+
+    name没有用引号引起来，使用JSON.parse所有浏览器中均抛异常，解析失败。
+
+    
+
+    补充：如果是在java中就好办了，根本用不上JsonObcjec之类，牛人都是用String拆分和拼凑
+
+    相关知识，
+
+    JSONObject
+
+    构造方法如下：
+
+    JSONObject();创建一个空的JSONObject对象
+
+    JSONObject(boolean isNull);创建一个是否为空的JSONObject对象
+
+    普通方法如下：
+
+    fromBean(Object bean);静态方法,通过一个pojo对象创建一个JSONObject对象
+
+    fromJSONObject(JSONObject object);静态方法,通过另外一个JSONObject对象构造一个JSONObject对象
+
+    fromJSONString(JSONString string);静态方法,通过一个JSONString创建一个JSONObject对象
+
+    toString();把JSONObject对象转换为json格式的字符串
+
+    iterator();返回一个Iterator对象来遍历元素
+
+    
+
+    
+
+    JSONArray:A JSONArray is an ordered sequence of values.
+
+    是一个final类,继承了Object，实现了JSON接口
+
+    构造方法如下：
+
+    JSONArray();构造一个空的JSONArray对象
+
+    普通方法如下：
+
+    fromArray(Object[] array);静态方法,通过一个java数组创建一个JSONArray对象
+
+    fromCollection(Collection collection);静态方法,通过collection集合对象创建一个JSONArray对象
+
+    fromString(String string);静态方法,通过一个json格式的字符串构造一个JSONArray对象
+
+    toString();把JSONArray对象转换为json格式的字符串
+
+    iterator();返回一个Iterator对象来遍历元素
+</pre>
+
     </div>
     <div><a href="../index.html"> 返回首页</a></div>
 </div>
@@ -30,13 +91,22 @@
 <script type="text/javascript" src="../js/public.js"></script>
 <script>
     var snippetdata = {
-        reactCharacteristic: [
-            "声明式设计：--> 使用声明范式，轻松描述应用",
-            "高效： --> 模拟DOM，减少DOM交互",
-            "灵活： --> React有较强的适用性，可以与已知的库或框架很好地配合",
-            "JSX： --> JSX 是 JavaScript 语法的扩展。React 开发不一定使用JSX，但建议使用。",
-            "组件： --> 通过 React 构建组件，代码更加容易得到复用，能够很好的应用在大项目的开发中。",
-            "单向相应的数据流： --> React 实现单向响应的数据流，减少重复代码，因此比传统数据绑定更简单"
+        option1: [
+            "function strToJson(str){ ",
+            "var json = eval('(' + str + ')'); ",
+            "return json; ",
+            "}"
+        ],
+        option2: [
+            "function strToJson(str){  ",
+            "var json = (new Function('return ' + str))();",
+            "return json; ",
+            "}"
+        ],
+        option3: [
+            "function strToJson(str){ ",
+            "return JSON.parse(str); ",
+            "}"
         ]
     }
     setSnippetContext( snippetdata );
