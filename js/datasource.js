@@ -40,7 +40,8 @@ const G_webSource = [
                     { name:"京/沪JS", url: "http://jsconf.cn/", discrible: ""},
                     { name:"前端圈", url: "http://fequan.com/", discrible: ""},
                     { name:"HTML5梦工厂", url: "http://www.html5dw.com/", discrible: ""},
-                    { name:"无障碍联盟", url: "http://accessibilityunion.org/", discrible: ""}
+                    { name:"无障碍联盟", url: "http://accessibilityunion.org/", discrible: ""},
+                    { name:"segmentfault", url: "https://segmentfault.com/", discrible: ""}
                 ]
             },
             { type: "国内综合",
