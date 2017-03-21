@@ -75,7 +75,7 @@
 // 选择导航内容
 function selectSourceType(obj){
     var showContent = "<div>",
-        sourceType = (typeof obj == "string") ? "index":obj.getAttribute("data-type"),
+        sourceType = (typeof obj == "string") ? window.localStorage.getItem("navtype"):obj.getAttribute("data-type"),
         sourceData = G_contentSource[sourceType],
         fenYeDiv = document.getElementById("content-modle-fenye"),
         dataLength = 0,
@@ -103,6 +103,7 @@ function selectSourceType(obj){
     }
     showContent += "</div>";
     contentModle.innerHTML = showContent;
+    window.localStorage.setItem("navtype", sourceType)
 }
 
 // data 数据源 ， page 当前页面， dict 切换方向
