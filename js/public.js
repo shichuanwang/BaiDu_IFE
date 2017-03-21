@@ -167,17 +167,17 @@ function setSnippetContext( snippetdata ) {
             text = snippetContent[i].innerText;
             if( text.indexOf("var") >　-1) {
                 dictText = text.substr(text.indexOf("var"),3)
-                snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#a0d2ec;'>var</i>");
+                snippetContent[i].innerHTML = text.replace(dictText, "<span style='color:#a0d2ec;'>var</span>");
             }
 
             if( text.indexOf("function") >　-1) {
                 dictText = text.substr(text.indexOf("function"),8)
-                snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#a0d2ec;'>function</i>");
+                snippetContent[i].innerHTML = text.replace(dictText, "<span style='color:#a0d2ec;'>function</span>");
             }
 
             if( text.indexOf("return") >　-1) {
                 dictText = text.substr(text.indexOf("return"),6)
-                snippetContent[i].innerHTML = text.replace(dictText, "<i style='color:#db73e2;'>return</i>");
+                snippetContent[i].innerHTML = text.replace(dictText, "<span style='color:#db73e2;'>return</span>");
             }
         }
     }
