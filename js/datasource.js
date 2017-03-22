@@ -227,7 +227,7 @@ const G_contentSource = {
         {id: 2, type: "echarts",title:"echarts", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
     ],
     react: [
-        {id: 1, type: "react", title:"什么是react？", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
+        {id: 1, type: "react", title:"什么是react？", titleClass: "content-modle-title",  discription:"React 是一个性能高、逻辑简单，且用于构建用户界面的JavaScript库", contentClass:"content-modle-discription", linkPath:"doc/react.html", aStyle: "content-modle-more"},
         {id: 2, type: "react",title:"react", titleClass: "content-modle-title",  discription:"HTML ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
     ],
     IFT: [
@@ -261,5 +261,5 @@ const G_contentSource = {
     audition: [
         {id: 1, type: "react", title:"react", titleClass: "content-modle-title",  discription:"面试 ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
         {id: 2, type: "react",title:"react", titleClass: "content-modle-title",  discription:"面试 ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
-    ],
+    ]
 };
