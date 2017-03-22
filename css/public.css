@@ -92,7 +92,7 @@ a {
 /*content*/
 #container-wrapper {
     width: 100%;
-    height: 1350px;
+    height: 2020px;
 }
 #content {
     position: relative;
@@ -102,14 +102,14 @@ a {
 #content-left {
     position: absolute;
     width: 0px;
-    height: 1300px;
+    height: 2000px;
     background: #f1f7f4;
 }
 
 #content-modle {
     position: absolute;
     width: 1000px;
-    height: 1300px;
+    height: 2000px;
     background: #fbfbfb;
 }
 /*content-modle 内容过滤条或搜索框*/
@@ -135,7 +135,7 @@ a {
 /*content-modle 内容分页*/
 #content-modle-fenye {
     position: absolute;
-    top: 1250px;
+    top: 1950px;
     width: 100%;
     height: 50px;
 }
@@ -151,7 +151,7 @@ a {
     position: absolute;
     left: 1020px;
     width: 250px;
-    height: 1300px;
+    height: 2000px;
     background: #fbfbfb;
 }
 
