@@ -16,7 +16,7 @@
     }
 
     // content-left 内容添加
-    var contentaside = document.getElementById("content-left"),
+    var contentaside = document.getElementById("content-right"),
         showAside = "", linedata, line;
     if( contentaside ) {
         for(var i=0; i<G_webSource.length; i++) {
