@@ -108,7 +108,7 @@ a {
 
 #content-modle {
     position: absolute;
-    width: 950px;
+    width: 1000px;
     height: 1300px;
     background: #fbfbfb;
 }
@@ -149,8 +149,8 @@ a {
 
 #content-right {
     position: absolute;
-    left: 970px;
-    width: 300px;
+    left: 1020px;
+    width: 250px;
     height: 1300px;
     background: #fbfbfb;
 }
