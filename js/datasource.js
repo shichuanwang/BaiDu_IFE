@@ -301,29 +301,57 @@ const G_webSource = [
     },
     { title: "设计和交互",
         content: [
-            { type: "腾讯系",
+            { type: "综合",
                 webfont: [
-                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                    { name:"Dribbble", url: "http://dribbble.com/", discrible: "UI设计师必备站点,全球最好的UI设计社区"},
+                    { name:"站酷", url: "http://www.zcool.com.cn/", discrible: "站酷网是中国最具人气的大型综合性设计网站，2006年8月创立于北京。"},
+                    { name:"优设", url: "http://www.uisdc.com/", discrible: ""},
+                    { name:"iconfans", url: "http://www.iconfans.org/", discrible: ""},
+                    { name:"视觉同盟", url: "http://www.visionunion.com/", discrible: ""},
+                    { name:"视觉中国", url: "http://shijue.me/", discrible: ""},
+                    { name:"68design", url: "http://68design.net/", discrible: ""}
                 ]
             },
-            { type: "腾讯系",
+            { type: "社区/组织",
                 webfont: [
-                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                    { name:"UPA中国", url: "http://www.uxpachina.org/", discrible: "成立于2004年4月18日， 北京光华设计发展基金会用户体验研究中心(DDF.UPA中国)是中国本土的第一个非盈利性可用性组织，它为我们中国那些活跃在产品分析，设计，实现，和评估等领域内，旨在为为人类创造更高可用性的产品的人们提供一个专业的交流和学习平台"},
+                    { name:"IXDC", url: "http://ixdc.org/", discrible: "国际体验设计协会（IXDC）是由20多家中国知名公司和大学联合支持在2010年成立的非盈利机构。向社会推广体验创新价值的理念是首要职责，搭建展示和交流的国际平台是重要任务"}
                 ]
             },
-            { type: "腾讯系",
+            { type: "图标",
                 webfont: [
-                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                    { name:"iconfinder", url: "https://www.iconfinder.com/", discrible: ""},
+                    { name:"findicons", url: "http://findicons.com/", discrible: ""},
+                    { name:"icon font", url: "http://www.iconfont.cn/", discrible: "阿里巴巴矢量图标库"}
                 ]
             },
-            { type: "腾讯系",
+            { type: "字体",
                 webfont: [
-                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                    { name:"Google Fonts", url: "https://www.google.com/fonts", discrible: "Google在线WEB字体，可下载或在线定制"},
+                    { name:"Chinaz Fon", url: "http://font.chinaz.com/", discrible: "站长之家字体素材库"},
+                    { name:"Knowsky Font", url: "http://font.knowsky.com/", discrible: "字体下载大宝库"}
                 ]
             },
-            { type: "腾讯系",
+            { type: "配色",
                 webfont: [
-                    { name:"腾讯TGideas", url: "http://tgideas.qq.com", discrible: ""}
+                    { name:"kuler", url: "https://kuler.adobe.com/create/color-wheel/", discrible: "Adob​​e旗下配色网站，创建和共享颜色主题"},
+                    { name:"peise", url: "http://www.peise.net/tools/web/", discrible: ""},
+                    { name:"ColorSchemeDesigner", url: "http://colorschemedesigner.com/", discrible: ""},
+                    { name:"DesignSeeds", url: "http://www.design-seeds.com/", discrible: "创立于2009年的设计配色网站"},
+                    { name:"colorCombos", url: "http://www.colorcombos.com/combolibrary.html", discrible: "提供了各种WEB配色方案"}
+                ]
+            },
+            { type: "交互/思维导图",
+                webfont: [
+                    { name:"processon", url: "http://www.processon.com/", discrible: "ProcessOn是一个方便易用、免费高效的在线作图工具，运用它可以免费制作多种图，例如：Flowchart流程图，BPMN图等"},
+                    { name:"mindManager", url: "http://www.mindjet.com/mindmanager/", discrible: "mindManager是由Mindjet公司开发的一款商业项目管理的应用程序，可以让用户通过思维导图的方法进行可视化的知识管理"}
+                ]
+            },
+            { type: "其他",
+                webfont: [
+                    { name:"MobilePatterns", url: "http://www.mobile-patterns.com/", discrible: "一个集合iOS界面截图给设计者灵感的酷站"},
+                    { name:"pixeden", url: "http://www.pixeden.com/", discrible: "免费优质界面设计源文件及有网站模板"},
+                    { name:"全球LOGO汇集", url: "http://logopond.com/", discrible: "一个汇集了全球LOGO的网站"}
                 ]
             }
         ]
