@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Blank Page for Rich Text Editing</title>
+  <meta http-equiv="content-type" name="author" content="Fujihara No Kokukiyo" />
+  <meta charset="utf-8" />
+</head>
+<style rel="stylesheet" type="text/css">
+  .outer{width:500px;border:1px solid black;overflow:hidden;margin:50px 0 0 100px;}
+  .test_div{width:1200px;background-image:linear-gradient(90deg,lightcoral 0%,lightgreen 50%,lightblue 100%);height:150px;}
+  .slider_bar,.slider_block{ border-radius:5px;}
+  .slider_bar{position:relative;width:80%;margin:5px auto 5px auto;background-color:lightgreen;height:5px;}
+  .slider_block{width:20px;height:5px;background-color:grey;cursor:pointer;position:absolute;}
+</style>
+<script type="text/javascript">
+  window.onload=function(){
+    /**
+     * 滑动条对象构造函数，
+     * 内含其他功能性函数，利用函数作用域链的原理，防止自己随意调用
+     * 兼容：firefox、opera、chrome
+     * ie没试，然而显然不兼容旧版本ie（8及之前），因为旧版本ie添加事件监听函数的方法不同。如若要兼容ie，还需要添加其他函数
+     * js生成的滑动条类名为slider_bar、滑动块类型为slider_block，可用css样式自己设置大小、颜色等。
+     * 滑动条左右padding未限制滑动条界限，如若需要限制，须在计算部分进行细小修改，加算padding，此处略去。
+     *
+     * @param {DOMElement} slider_content 被滚动的元素（不是被滚动元素的父元素）
+     */
+    function Slider(slider_content){
+      //slider_instance为对象本身（在事件处理函数中会进行访问，而事件处理函数中的this对象已被注入为event.currentTarget，因此预先存储）
+      var slider_instance=this;
+      //this.slider_content为被滚动的元素
+      this.slider_content=slider_content;
+      //this.outer为被滚动元素的父元素
+      this.outer=slider_content.parentNode;
+      //创建滑动条
+      this.slider_bar=createSliderBar();
+      //创建滑动条块
+      this.slider_block=createSliderBlock();
+      //拼装
+      this.slider_bar.appendChild(this.slider_block);
+      this.outer.appendChild(this.slider_bar);
+      //被滚动元素可被滚动的总宽度
+      this.slider_content_width=this.slider_content.offsetWidth-this.outer.clientWidth;
+      //滑动条块可滑动的总宽度
+      this.slider_bar_width=this.slider_bar.clientWidth-this.slider_block.offsetWidth;
+      //被滚动元素的左边距（相对父元素）
+      this.slider_content_left=0;
+      //滚动块的左边距（相对父元素）
+      this.slider_block_left=0;
+      //滑动条的左边距（相对视口）
+      this.slider_bar_pageLeft=getPageLeft(this.slider_bar);
+      //滑动条块添加鼠标压键事件
+      this.slider_block.addEventListener("mousedown",mousedownHandler,false);
+      //离开父元素后取消鼠标移动事件
+      this.outer.addEventListener("mouseleave",mouseupHandler,false);
+      //鼠标弹键时取消鼠标移动事件
+      this.outer.addEventListener("mouseup",mouseupHandler,false);
+      /**
+       * 创建滑动条
+       */
+      function createSliderBar(){
+        var slider_bar=document.createElement("div");
+        slider_bar.className="slider_bar";
+        return slider_bar;
+      }
+      /**
+       * 创建滑动条块
+       */
+      function createSliderBlock(){
+        var slider_block=document.createElement("div");
+        slider_block.className="slider_block";
+        return slider_block
+      }
+      /**
+       * 鼠标按下事件处理
+       */
+      function mousedownHandler(event){
+        //计算鼠标相对滑动块的左边距，进而在鼠标移动事件处理函数中使用
+        //鼠标相对滑动块左边距=鼠标相对视口左边距-滑动块相对视口左边距
+        slider_instance.mouseLeft=event.clientX-getPageLeft(this);
+        console.log(getPageLeft(this));
+        slider_instance.outer.addEventListener("mousemove",mousemoveHandler,false);
+      }
+      /**
+       * 鼠标移动事件处理
+       */
+      function mousemoveHandler(event){
+        //计算出应当设置的滑动块左边距（相对于父容器）
+        //滑动块相对于滑动条左边距=鼠标相对于视口左边距-滑动条相对于视口左边距-鼠标相对于滑动块左边距
+        var blockLeft=event.clientX-slider_instance.slider_bar_pageLeft-slider_instance.mouseLeft;
+        //如若滑动块相对于父容器左边距大于滑动块可移动宽度或小于0，表示过界；设置为左右界限值
+        if(blockLeft>slider_instance.slider_bar_width){
+          blockLeft=slider_instance.slider_bar_width
+        }else if(blockLeft<0){
+          blockLeft=0;
+        }
+        //设置滑动块的新位置
+        slider_instance.slider_block.style.left=blockLeft+"px";
+        //按照滚动块已滚动的百分比，设置被滚动元素的marginLeft（负值），进而让其滚动起来
+        //被滚动元素的左margin=-(滑动块相对于滑动条左边距/可滑动最大宽度*可滚动元素的最大宽度)
+        slider_instance.slider_content.style.marginLeft="-"+(blockLeft/slider_instance.slider_bar_width*slider_instance.slider_content_width)+"px";
+      }
+      /**
+       * 鼠标键弹起事件处理
+       */
+      function mouseupHandler(event){
+        slider_instance.outer.removeEventListener("mousemove",mousemoveHandler,false);
+      }
+      /**
+       * 获得元素的视口左边距
+       */
+      function getPageLeft(el){
+        var result=el.offsetLeft;
+        var parent=el.offsetParent;
+        while(parent!==null){
+          result+=parent.offsetLeft;
+          parent=parent.offsetParent;
+        }
+        return result;
+      }
+    }
+    //用test_div元素进行展示
+    new Slider(document.getElementsByClassName("test_div")[0]);
+ 
+  }
+</script>
+<body>
+<div class="outer">
+  <div class="test_div"></div>
+  
+</div>
+<div><a href="../index.html"> 返回首页</a></div>
+</body>

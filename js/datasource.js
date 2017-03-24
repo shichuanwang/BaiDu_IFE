@@ -22,7 +22,8 @@ const G_navData = [
     { linkPath: "" , navType: "echarts", text:"echarts" },
     { linkPath: "" , navType: "react", text:"react" },
     { linkPath: "" , navType: "IFT", text:"百度IFE任务" },
-    { linkPath: "" , navType: "audition", text:"面试" }
+    { linkPath: "" , navType: "audition", text:"面试" },
+    { linkPath: "" , navType: "other", text:"其他" }
 ];
 
 // 前端资源网站汇总
@@ -580,5 +581,8 @@ const G_contentSource = {
     audition: [
         {id: 1, type: "react", title:"react", titleClass: "content-modle-title",  discription:"面试 ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"},
         {id: 2, type: "react",title:"react", titleClass: "content-modle-title",  discription:"面试 ,又称超文本标记语言", contentClass:"content-modle-discription", linkPath:"", aStyle: "content-modle-more"}
+    ],
+    other:[
+        {id: 1, type: "scroll", title:"原生js编写滚动条样式", titleClass: "content-modle-title",  discription:"原生js编写滚动条样式", contentClass:"content-modle-discription", linkPath:"index/scroll.html", aStyle: "content-modle-more"},
     ]
 };
