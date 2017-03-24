@@ -15,7 +15,7 @@
         headerNav.innerHTML = nav+"</div>";
     }
 
-    // content-left 内容添加
+    // content-right 内容添加
     var contentaside = document.getElementById("content-right"),
         showAside = "", linedata, line;
     if( contentaside ) {

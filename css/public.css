@@ -99,16 +99,9 @@ a {
     width: 1200px;
     margin: 0px auto;
 }
-#content-left {
-    position: absolute;
-    width: 0px;
-    height: 2000px;
-    background: #f1f7f4;
-}
-
 #content-modle {
     position: absolute;
-    width: 1000px;
+    width: 900px;
     height: 2000px;
     background: #fbfbfb;
 }
@@ -149,9 +142,10 @@ a {
 
 #content-right {
     position: absolute;
-    left: 1020px;
-    width: 250px;
+    left: 910px;
+    width: 300px;
     height: 2000px;
+    overflow-y: auto;
     background: #fbfbfb;
 }
 
