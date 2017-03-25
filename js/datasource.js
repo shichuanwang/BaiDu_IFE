@@ -10,7 +10,7 @@ const styles = {
 }
 
 //每页内容条数 设为number
-const G_PAGECOUNT = 15;
+const G_PAGECOUNT = 30;
 
 // 设置公共的数据源 , 所用名称前加上大写G_
 // 导航条数据
@@ -310,13 +310,13 @@ const G_webSource = [
                 webfont: [
                     { name:"grunt.js官方", url: "http://gruntjs.com/", discrible: "Grunt是一个基于node.js的自动化项目构建工具，支持压缩、合并、测试等功能"},
                     { name:"grunt.js中文站点", url: "http://gruntjs.cn/", discrible: ""},
-                    { name:"NEW", url: "http://yeoman.io/", discrible: "一款前端自动化工作流工具，集成Grunt和bower，实现了项目的快速搭建、自动化前端构建，以及前端包依赖和包管理"}
+                    { name:"Yeoman", url: "http://yeoman.io/", discrible: "一款前端自动化工作流工具，集成Grunt和bower，实现了项目的快速搭建、自动化前端构建，以及前端包依赖和包管理"}
                 ]
             },
             { type: "gulp.js",
                 webfont: [
                     { name:"gulpjs官方", url: "http://gulpjs.com/", discrible: "比Grunt更简单的自动化的项目构建利器"},
-                    { name:"NEW", url: "https://github.com/targetkiller/gulp-imageisux", discrible: "腾讯智图，一款图片压缩产品，支持生成webp/jpg/png。此为gulp插件，基于智图的api，实测压缩率大于Tinypng"},
+                    { name:"智图gulp插件", url: "https://github.com/targetkiller/gulp-imageisux", discrible: "腾讯智图，一款图片压缩产品，支持生成webp/jpg/png。此为gulp插件，基于智图的api，实测压缩率大于Tinypng"},
                 ]
             },
             { type: "MVC",
@@ -383,7 +383,7 @@ const G_webSource = [
                     { name:"HTML5支持性查询", url: "http://mobilehtml5.org/", discrible: "HTML5支持性查询"},
                     { name:"多终端屏幕分辨率查询", url: "http://screensiz.es/phon", discrible: "HTML5支持性查询"},
                     { name:"HTML5浏览器测试", url: "http://html5test.com/", discrible: "HTML5支持性查询"},
-                    { name:"NEW", url: "http://html5please.com/", discrible: "查看最新HTML5 CSS3特性的站点"}
+                    { name:"html5please", url: "http://html5please.com/", discrible: "查看最新HTML5 CSS3特性的站点"}
                 ]
             },
             { type: "技巧/教程",
@@ -451,7 +451,8 @@ const G_webSource = [
                     { name:"iconfans", url: "http://www.iconfans.org/", discrible: ""},
                     { name:"视觉同盟", url: "http://www.visionunion.com/", discrible: ""},
                     { name:"视觉中国", url: "http://shijue.me/", discrible: ""},
-                    { name:"68design", url: "http://68design.net/", discrible: ""}
+                    { name:"68design", url: "http://68design.net/", discrible: ""},
+                    { name:"UI中国", url: "http://www.ui.cn/", discrible: ""}
                 ]
             },
             { type: "社区/组织",
