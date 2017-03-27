@@ -5,7 +5,7 @@ const styles = {
         wrapper:"width:100%;",
         title: "width:100%;height:35px;text-indent: 10px;line-height:35px;color:#005f3c;background:#9dccb6;",
         type: "margin:5px;padding:0 5px;font-size:14px;color:#9dccb6;border-radius:2px;",
-        webfont: "display:inline-block;width:40%;font-size:12px;color:#005f3c;margin: 0 10px;"
+        webfont: "display:inline-block;margin: 0 5px;height:20px;font-size:10px;color:#005f3c;word-break: break-word;"
     }
 }
 
