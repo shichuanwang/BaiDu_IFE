@@ -4,14 +4,13 @@ const styles = {
     webfont: {
         wrapper:"width:100%;",
         title: "width:100%;height:35px;text-indent: 10px;line-height:35px;color:#005f3c;background:#9dccb6;",
-        type: "margin:5px;padding:0 5px;font-size:14px;color:#8db9a4;border-radius:2px;",
+        type: "margin:5px;padding:0 5px;font-size:14px;color:#9dccb6;border-radius:2px;",
         webfont: "display:inline-block;margin: 0 5px;height:20px;font-size:10px;color:#005f3c;word-break: break-word;"
     }
 }
 
 //每页内容条数 设为number
-const G_PAGECOUNT = 20;
-
+const G_PAGECOUNT = 30;
 // 设置公共的数据源 , 所用名称前加上大写G_
 // 导航条数据
 const G_navData = [
