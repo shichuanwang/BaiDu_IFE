@@ -2,23 +2,38 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>IFE JavaScript Task 01</title>
+    <title>若无缘</title>
     <link rel="stylesheet" href="css/public.css">
+    <link href="img/logo.png" rel="shortcut icon" />
+    
 </head>
 <body>
+    <div id="bodybackground">
+        <img src="img/background2.jpg" alt="">
+    </div>
     <div id="header-wrapper">
         <div id="header-title">
-            <div class="logo">AloneStar</div>
+            <img class="logoImg" src="img/logo.png" alt="">
+            <div class="logoName"> AloneStar</div>
             <div class="title-content">fight , Hold On, Never Give Up !</div>
+            <div id="header-audio">
+                <div id="content-audio-title" style="float:left;height: 100%;line-height: 100px;">Faded：</div>
+                <audio src="source/Faded.mp3"  width="300" height="50" controls loop></audio> 
+            </div>
         </div>
         <div id="header-nav"></div>
     </div>
     <div id="container-wrapper">
         <div id="content">
-            <div id="content-left">
-                
-            </div>
             <div id="content-modle">
+                <div id="content-title">
+                    <div id="content-readio">
+                        <div id="content-readio-title">《英雄联盟》</div>
+                        <video  width="500px" height="300px" controls>
+                            <source src="" type="video/mp4;codecs='mpg4(xdiv),mpg4(xvid)，avc(H264)''">
+                        </video>
+                    </div>
+                </div>
                 <div id="content-modle-showselect"></div>
                 <div id="content-modle-showcontent"></div>
                 <div id="content-modle-fenye">
@@ -29,11 +44,7 @@
                 </div>
             </div>
             <div id="content-right">
-                <h4>相关文档</h4>
-                <ul>
-                    <li><a class="taskTarget" href="doc/snippet.html">实现代码片段</a></li>
-                    <li><a class="taskTarget" href="doc/react.html">react 知识整理</a></li>
-                </ul>
+                
             </div>
         </div>
     </div>

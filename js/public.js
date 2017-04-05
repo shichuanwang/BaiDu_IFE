@@ -4,36 +4,16 @@
 
 (function() {
     // 设置导航条
-    var nav = "<div style='width:1000px;margin:0px auto;'>";
+    var nav = "<div style='width:1200px;margin:0px auto;'>";
     var headerNav = document.getElementById("header-nav");
     if( headerNav ) {
         for(var n=0; n<G_navData.length; n++) {
-            nav += "<p style='"+styles.navline+"' >"+
-                        "<a href='javascirpt:void(0);' data-type='"+G_navData[n].navType+"' onclick='selectSourceType(this)'>"+G_navData[n].text+"</a>"+
-                "</p>";
+            nav += "<span style='"+styles.navline+"' >"+
+                        "<a href='javascirpt:void(0);' style='color:#9dccb6;' data-type='"+G_navData[n].navType+"' onclick='selectSourceType(this)'>"+G_navData[n].text+"</a>"+
+                "</span>";
         }
         headerNav.innerHTML = nav+"</div>";
     }
-
-    // content-left 内容添加
-    var contentaside = document.getElementById("content-right"),
-        showAside = "", linedata, line;
-    if( contentaside ) {
-        for(var i=0; i<G_webSource.length; i++) {
-            showAside += "<div style='"+styles.webfont.wrapper+"'><div style='"+styles.webfont.title+"'>"+G_webSource[i].title+"</div>";
-            for(var j=0; j<G_webSource[i].content.length; j++){
-                linedata = G_webSource[i].content[j];
-                showAside += "<p style='"+styles.webfont.type+"'>"+linedata.type+"</p>";
-                for(var k=0; k<linedata.webfont.length; k++) {
-                    line = linedata.webfont[k];
-                    showAside += "<span style='"+styles.webfont.webfont+"'><a href='"+line.url+"' title='"+line.discrible+"'>"+line.name+"</a></span>";
-                }
-            }
-            showAside += "</div>";
-        }
-        contentaside.innerHTML = showAside;
-    }
-
 
     // 设置IFE 任务显示图片 
     var question = document.getElementById("question");
@@ -67,28 +47,62 @@ function selectSourceType(obj){
         contentModle = document.getElementById("content-modle-showcontent");
     if( sourceType ) {
         // 设置主区内容分页
+        var span = document.getElementById("header-nav").getElementsByTagName("span"),
+            defaultSpan;
+        for(var i=0; i< span.length; i++){
+            span[i].style.background = "#005f3c";
+            if( sourceType ==  span[i].getElementsByTagName("a")[0].getAttribute("data-type")) {
+                defaultSpan = span[i]
+            }
+        }
+        if(obj.parentNode){
+            obj.parentNode.style.background = "#048857";
+        }else{
+            defaultSpan.style.background = "#048857";
+        } 
         if(sourceData.length < G_PAGECOUNT+1) {
             fenYeDiv.innerHTML = "<span id='pageCount'>共1页</span>"+
-                            "<span id='beforePage' class='beforepage-false'>上一页</span>"+
-                            "<span id='nowPage' style='color:blue;'>第1页</span>"+
-                            "<span id='nextPage' class='nextpage-false'>下一页</span>";
+                            "<span id='beforePage' class='beforepage-false'><<</span>"+
+                            "<span id='nowPage' style='color:blue;'>1</span>"+
+                            "<span id='nextPage' class='nextpage-false'>>></span>";
             dataLength = sourceData.length;
         } else if( sourceData.length > G_PAGECOUNT ) {
             fenYeDiv.innerHTML = "<span id='pageCount'>共"+Math.ceil(sourceData.length/G_PAGECOUNT)+"页</span>"+
-                            "<span id='beforePage' class='beforepage-ture' onclick=\"fenye( '"+sourceType+"', 'pre')\">上一页</span>"+
-                            "<span id='nowPage' style='color:blue;' data-nowPage='1'>第1页</span>"+
-                            "<span id='nextPage'  class='nextpage-true' onclick=\"fenye( '"+sourceType+"', 'next')\">下一页</span>";
+                            "<span id='beforePage' class='beforepage-false' onclick=\"fenye( '"+sourceType+"', 'pre')\"><<</span>"+
+                            "<span id='nowPage' style='color:blue;' data-nowPage='1'>1</span>"+
+                            "<span id='nextPage'  class='nextpage-true' onclick=\"fenye( '"+sourceType+"', 'next')\">>></span>";
             dataLength = G_PAGECOUNT;
         }
         // 设置主区内容显示
-        for(var i=0; i<dataLength; i++) {
-            showContent += "<p class='"+sourceData[i].titleClass+"'><i style='color:#9dccb6;font-size:14px;'>["+sourceData[i].type+"]</i>. "+sourceData[i].title+"</p>"+
-                        "<p class='"+sourceData[i].contentClass+"'>"+sourceData[i].discription+
-                                " <a href='"+sourceData[i].linkPath+"' class='"+sourceData[i].aStyle+"'>更多>></a>"+
-                            "</p>";
+        if( sourceType == "webaddress") {
+            var contentaside = document.getElementById("content-modle-showcontent"),
+                showAside = "", linedata, line;
+            if( contentaside ) {
+                for(var i=0; i<G_webSource.length; i++) {
+                    showAside += "<div style='"+styles.webfont.wrapper+"'><div style='"+styles.webfont.title+"'>"+G_webSource[i].title+"</div>";
+                    for(var j=0; j<G_webSource[i].content.length; j++){
+                        linedata = G_webSource[i].content[j];
+                        showAside += "<div style='"+styles.webfont.type+"'><span>"+linedata.type+"</span>";
+                        for(var k=0; k<linedata.webfont.length; k++) {
+                            line = linedata.webfont[k];
+                            showAside += "<span style='"+styles.webfont.webfont+"'><a href='"+line.url+"' title='"+line.discrible+"' target='_blank'>"+line.name+"</a></span>";
+                        }
+                        showAside +="</div>"
+                    }
+                    showAside += "</div>";
+                }
+                contentaside.innerHTML = showAside;
+            }
+        }else{
+            for(var i=0; i<dataLength; i++) {
+                showContent += "<p class='"+sourceData[i].titleClass+"'>"+sourceData[i].title+" <span style='color:#005f3c;background:#cef1e0;font-size:10px;padding:2px;font-weight:300;'>"+sourceData[i].type+"</span> </p>"+
+                            "<p class='"+sourceData[i].contentClass+"'>"+sourceData[i].discription+
+                                    " <a href='"+sourceData[i].linkPath+"' class='"+sourceData[i].aStyle+"' target='_blank'>more>></a>"+
+                                "</p>";
+            }
+            showContent += "</div>";
+            contentModle.innerHTML = showContent;
         }
-        showContent += "</div>";
-        contentModle.innerHTML = showContent;
         window.localStorage.setItem("navtype", sourceType)
     }
 }
@@ -98,6 +112,8 @@ function fenye( sourcetype, dict){
     var nowPage = document.getElementById("nowPage"),
         page = parseInt(nowPage.getAttribute("data-nowPage")),
         contentModle = document.getElementById("content-modle-showcontent"),
+        beforePage = document.getElementById("beforePage"),
+        nextPage = document.getElementById("nextPage"),
         data = G_contentSource[sourcetype],
         showContent = "<div>",
         starNum = 0, endNum = data.length;
@@ -105,15 +121,14 @@ function fenye( sourcetype, dict){
         if( dict == "pre") {
             if(page > 1 ) {
                 page = page - 1;
-                nowPage.innerHTML = "第"+page+"页";
+                nowPage.innerHTML = page;
                 nowPage.setAttribute("data-nowPage",page);
             }
         }else if( dict == "next") {
             if(page < Math.ceil(data.length/G_PAGECOUNT) ) {
                 page = page + 1;
-                nowPage.innerHTML = "第"+page+"页";
+                nowPage.innerHTML = page;
                 nowPage.setAttribute("data-nowPage",page);
-                
             }
         }
         starNum = (page-1)*G_PAGECOUNT;

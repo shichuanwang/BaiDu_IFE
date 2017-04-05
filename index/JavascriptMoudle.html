@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>设计模式类别和分类</title>
+    <link rel="stylesheet" href="../css/public.css">
+</head>
+<body>
+
+<div  class="contentText">
+<h1>设计模式类别</h1>
+<div>
+    <h5>一. 什么是react</h5>
+    <P>React 是一个JavaScript库</P>
+    <P>React 是一个用于构建用户界面的JavaScript库</P>
+    <P>React 是一个性能高、逻辑简单，且用于构建用户界面的JavaScript库</P>
+    <P>React 的特点如下：</P>
+    <!--思考步骤：
+        1.在公共js文件中，编写代码片段snippet与对应数据源绑定,自动刷去数据；
+        2.在页面中每个snippet的标签上，自定义一个属性 data-datasource, 用于指定数据源；
+        3.数据源 设置在当前需要的页面中；
+    -->
+    <code class="snippet" data-datasource="reactCharacteristic"></code>
+
+    <p>第一个示例 :　<a href="reactdemo/demo.html">demo</a></p>
+</div>
+<div><a href="../index.html"> 返回首页</a></div>
+</div>
+
+
+<script type="text/javascript" src="../js/datasource.js"></script>
+<script type="text/javascript" src="../js/public.js"></script>
+<script>
+    var snippetdata = {
+        reactCharacteristic: [
+            "声明式设计：--> 使用声明范式，轻松描述应用",
+            "高效： --> 模拟DOM，减少DOM交互",
+            "灵活： --> React有较强的适用性，可以与已知的库或框架很好地配合",
+            "JSX： --> JSX 是 JavaScript 语法的扩展。React 开发不一定使用JSX，但建议使用。",
+            "组件： --> 通过 React 构建组件，代码更加容易得到复用，能够很好的应用在大项目的开发中。",
+            "单向相应的数据流： --> React 实现单向响应的数据流，减少重复代码，因此比传统数据绑定更简单"
+        ]
+    }
+    setSnippetContext( snippetdata );
+</script>
+</body>
+</html>

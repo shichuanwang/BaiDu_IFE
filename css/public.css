@@ -44,6 +44,18 @@ a {
 #question img {
     width: 550px;
 }
+/*背景*/
+#bodybackground {
+    position: absolute;
+    width:100%;
+    height: 2400px;
+    z-index: -1;
+}
+
+#bodybackground img {
+    width: 100%;
+    height: 100%;
+}
 
 /*title*/
 #header-wrapper {
@@ -53,13 +65,13 @@ a {
 
 #header-title {
     margin: 1px auto;
-    width: 600px;
+    width: 1200px;
     height: 100px;
 }
 /*Lobster  Giddyup Std */
-.logo {
+.logoName {
     float: left;
-    width:100px;
+    width:150px;
     height: 100%;
     font-size: 30px;
     font-weight: bold;
@@ -67,14 +79,23 @@ a {
     line-height: 100px;
     color: #005f3c;
 }
-.logo img {
-    width: 100px;
+.logoImg {
+    float: left;
+    width:100px;
+    height: 100%;
 }
+
 .title-content {
     float: left;
-    margin-left: 100px;
     height: 100%;
     line-height: 100px;
+}
+
+#header-audio {
+    float: right;
+    width: 370px;
+    height: 100%;
+    line-height: 120px;
 }
 
 #header-nav {
@@ -92,35 +113,52 @@ a {
 /*content*/
 #container-wrapper {
     width: 100%;
-    height: 1350px;
+    height: 2220px;
 }
+
+
 #content {
     position: relative;
     width: 1200px;
     margin: 0px auto;
 }
-#content-left {
-    position: absolute;
-    width: 0px;
-    height: 1300px;
-    background: #f1f7f4;
-}
-
 #content-modle {
     position: absolute;
-    width: 1000px;
-    height: 1300px;
-    background: #fbfbfb;
+    width: 900px;
+    height: 2200px;
+    background: rgba(251, 251, 251, 0.8)
 }
+#content-title {
+    margin: 0px auto;
+    height: 360px;
+    width: 900px;
+    background: #378668;
+}
+
+#content-readio {
+    margin: 0px auto;
+    padding-top: 10px;
+    width: 500px;
+    height: 350px;
+}
+#content-readio-title {
+    color: white;
+}
+
 /*content-modle 内容过滤条或搜索框*/
 #content-modle-showselect {
     width: 100%;
     height: 50px;
 }
+#content-modle-showcontent {
+    padding: 0 10px;
+}
 /*content-modle-showcontent 内容样式设置*/
 .content-modle-title {
-    font-size:16px;
+    font-size:14px;
     font-weight:700;
+    padding-top: 5px;
+    border-top: 1px solid #f1f4f3;
 }
 .content-modle-discription {
     font-size:14px;
@@ -135,24 +173,33 @@ a {
 /*content-modle 内容分页*/
 #content-modle-fenye {
     position: absolute;
-    top: 1250px;
+    top: 2150px;
     width: 100%;
     height: 50px;
+    text-align: center;
+    padding-top: 10px;
+    border-top: 1px solid #f1f4f3;
 }
 
 .beforepage-true, .nextpage-true {
     color: #9dccb6;
+    cursor: pointer;
+    border: 1px solid #9dccb6;
+    border-radius: 2px;
 }
 .beforepage-false, .nextpage-false {
     color: #e6e6e6;
+    cursor: pointer;
+    border: 1px solid #e6e6e6;
+    border-radius: 2px;
 }
 
 #content-right {
     position: absolute;
-    left: 1020px;
-    width: 250px;
-    height: 1300px;
-    background: #fbfbfb;
+    left: 910px;
+    width: 300px;
+    height: 2200px;
+    background: rgba(251, 251, 251, 0.8)
 }
 
 
